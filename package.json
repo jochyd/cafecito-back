@@ -4,7 +4,8 @@
   "description": "Practica de Backend para el proyecto de Cafecito",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/index.js"
+    "start": "babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js"
   },
   "keywords": [
     "backend",
