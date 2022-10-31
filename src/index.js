@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
+//importamos la ruta de los productos con el import 
+import productoRouter from './routes/productos.routes'
 // llamamos a la conexion de la base de datos (ejecutamos la base de datos)
 import './database';
 
@@ -39,9 +41,4 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 //rutas
 // http://localhost:4000/prueba
-app.get('/prueba', (req, res)=>{
-    res.send('esto es una prueba de una peticion get')
-})
-app.delete('/prueba', (req, res)=>{
-    res.send('aqui tendria que borrar un producto o dato')
-})
+app.use('/apicafe', productoRouter);
