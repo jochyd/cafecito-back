@@ -51,3 +51,21 @@ export const crearProductos = async(req, res) => {
         });
     }
 };
+
+export const editarProducto = async(req, res) =>{
+    try{
+        //extraer el parametro de la ruta y los datos del objeto 
+        //validar los datos
+        //solicitar a la bd actualizar el producto
+        await Producto.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({
+            mensaje: 'El producto pudo ser actualizado'
+        })
+        //respondemos al frontend
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            mensaje: 'error al intentar editar un producto'
+        });
+    }
+}
