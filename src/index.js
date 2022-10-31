@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
+// llamamos a la conexion de la base de datos (ejecutamos la base de datos)
+import './database';
+
 
 //crear una instancia de express es crear una variable app
 
