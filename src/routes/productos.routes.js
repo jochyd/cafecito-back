@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { crearProductos, editarProducto, listarProductos, obtenerProductos } from "../controllers/productos.controllers";
+import { borrarProducto, crearProductos, editarProducto, listarProductos, obtenerProductos } from "../controllers/productos.controllers";
 
 const router = Router();
 //esta es una ruta peticion get
 router.route("/productos").get(listarProductos).post(crearProductos);
 
-router.route('/productos/:id').get(obtenerProductos).put(editarProducto)
+router.route('/productos/:id').get(obtenerProductos).put(editarProducto).delete(borrarProducto);
 
 
 // app.get('/prueba', (req, res)=>{

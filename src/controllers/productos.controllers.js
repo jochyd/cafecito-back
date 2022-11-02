@@ -43,7 +43,6 @@ export const crearProductos = async(req, res) => {
         res.status(201).json({
             mensaje: 'El producto fue creado correctamente'
         });
-        
     }catch(error){
         console.log(error);
         res.status(404).json({
@@ -66,6 +65,22 @@ export const editarProducto = async(req, res) =>{
         console.log(error);
         res.status(400).json({
             mensaje: 'error al intentar editar un producto'
+        });
+    }
+}
+
+export const borrarProducto = async(req, res) =>{
+    try{
+        //buscar el id de la ruta y luego pedir a la BD borrar ese producto
+        await Producto.findByIdAndDelete(req.params.id);
+        // enviar respuesta al frontend
+        res.status(200).json({
+            mensaje: 'El producto fue eliminado con exito'
+        });
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'Error al intentar borrar un producto'
         });
     }
 }
