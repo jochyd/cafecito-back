@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 //const url = 'mongodb://127.0.0.1:27017/cafecito'; /(si es q no anda el local host)
 
-const url = 'mongodb+srv://jochyd:Lgg31105032@cluster0.0yclxwd.mongodb.net/test';
+const url = 'mongodb+srv://jochyd:Lgg31105032@cluster0.0yclxwd.mongodb.net/cafecito-db';
 
 mongoose.connect(url);
 
